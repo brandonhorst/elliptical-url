@@ -1,49 +1,47 @@
 {
-  "name": "lacona-phrase-url",
-  "version": "0.0.1",
-  "description": "Lacona Phrase for handling URLs",
-  "main": "lib/index.js",
-  "scripts": {
-    "pretest": "babel test --out-dir tmp -b regenerator",
-    "test": "mocha tmp",
-    "build": "babel src --out-dir lib -b regenerator",
-    "validate": "npm run build && npm run test",
-    "clean": "rimraf tmp lib",
-    "prepublish": "npm run clean && npm run build"
+  "author": {
+    "name": "@brandonhorst"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brandonhorst/lacona-phrase-url.git"
-  },
-  "keywords": [
-    "lacona-phrase",
-    "lacona",
-    "phrase",
-    "url",
-    "website",
-    "address",
-    "web"
-  ],
-  "author": "@brandonhorst",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/brandonhorst/lacona-phrase-url/issues"
   },
-  "homepage": "https://github.com/brandonhorst/lacona-phrase-url",
-  "devDependencies": {
-    "babel": "^5.1.11",
-    "chai": "^2.2.0",
-    "lacona": "^0.26.0",
-    "lacona-util-fulltext": "^0.2.0",
-    "mocha": "^2.2.4",
-    "rimraf": "^2.3.2"
-  },
   "dependencies": {
     "lacona-phrase": "^0.7.0",
-    "lacona-phrase-digitstring": "^0.2.1",
-    "lacona-phrase-number": "^0.2.1",
-    "lacona-phrase-repeat": "^0.1.0",
-    "lacona-phrase-validator": "^0.10.2",
-    "lodash": "^3.7.0"
-  }
+    "lodash": "^3.10.1"
+  },
+  "description": "Lacona Phrase for handling URLs",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.3.0",
+    "lacona": "^0.28.0",
+    "lacona-util-fulltext": "^0.2.0",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3"
+  },
+  "homepage": "https://github.com/brandonhorst/lacona-phrase-url",
+  "keywords": [
+    "address",
+    "lacona",
+    "lacona-phrase",
+    "phrase",
+    "url",
+    "web",
+    "website"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "lacona-phrase-url",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonhorst/lacona-phrase-url.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf tmp lib",
+    "prepublish": "npm run clean && npm run build",
+    "pretest": "babel test --out-dir tmp",
+    "test": "mocha tmp",
+    "validate": "npm run build && npm run test"
+  },
+  "version": "0.0.1"
 }
