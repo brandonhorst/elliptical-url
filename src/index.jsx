@@ -16,8 +16,8 @@ export class URL extends Phrase {
     return (
       <label text={this.props.argument} suppressWhen={this.suppressWhen}>
         <choice>
-          <ImpliedURL {...this.props} />
-          <SpecifiedURL {...this.props} />
+          <ImpliedURL {...this.props} id={undefined} />
+          <SpecifiedURL {...this.props} id={undefined} />
         </choice>
       </label>
     )
