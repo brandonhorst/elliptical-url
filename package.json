@@ -12,7 +12,7 @@
   "devDependencies": {
     "babel": "^5.8.34",
     "chai": "^3.4.1",
-    "lacona": "^0.35.0",
+    "lacona": "^0.36.0",
     "lodash": "^3.10.1",
     "mocha": "^2.3.4",
     "rimraf": "^2.5.0"
