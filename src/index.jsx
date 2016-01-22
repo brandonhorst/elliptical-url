@@ -30,7 +30,7 @@ class ImpliedURL extends Phrase {
   }
 
   filter (input) {
-    return /^(\w+\.)+\w{2,63}\S*$/i.test(input)
+    return /^([\w-]+\.)+\w{2,63}\S*$/i.test(input)
   }
 
   describe () {
