@@ -1,57 +1,27 @@
 /** @jsx createElement */
-import {createElement, Phrase} from 'lacona-phrase'
+import {createElement} from 'elliptical'
+import ImpliedURL from './implied-url'
+import SpecificURL from './specific-url'
 
-export class URL extends Phrase {
-  static defaultProps = {
-    splitOn: /\s|,/,
-    argument: 'URL',
-    limit: 1
-  }
-
-  suppressWhen (input) {
-    return /^(h|ht|htt|https?|https?:|https?:\/|https?:\/\/|(https?:\/\/)?|\w*|\w+\.|\w+\.[a-z])$/.test(input)
-  }
-
-  describe() {
-    return (
-      <label text={this.props.argument} suppressWhen={this.suppressWhen}>
-        <choice>
-          <ImpliedURL {...this.props} id={undefined} />
-          <SpecifiedURL {...this.props} id={undefined} />
-        </choice>
-      </label>
-    )
-  }
+const defaultProps = {
+  splitOn: /\s|,/,
+  argument: 'URL',
+  limit: 1
 }
 
-class ImpliedURL extends Phrase {
-  getValue (result) {
-    return `http://${result.remaining}`
-  }
-
-  filter (input) {
-    return /^([\w-]+\.)+\w{2,63}\S*$/i.test(input)
-  }
-
-  describe () {
-    return (
-      <map function={this.getValue}>
-        <sequence>
-          <literal decorate allowInput={false} text='http://'/>
-          <freetext filter={this.filter} splitOn={this.props.splitOn} limit={this.props.limit} id='remaining' />
-        </sequence>
-      </map>
-    )
-  }
-
+function suppressWhen (input) {
+  return /^(h|ht|htt|https?|https?:|https?:\/|https?:\/\/|(https?:\/\/)?|\w*|\w+\.|\w+\.[a-z])$/.test(input)
 }
 
-class SpecifiedURL extends Phrase {
-  filter (input) {
-    return /^https?:\/\/\S+/i.test(input)
-  }
-
-  describe () {
-    return <freetext filter={this.filter} splitOn={this.props.splitOn} limit={this.props.limit} />
-  }
+function describe ({props}) {
+  return (
+    <label text={props.argument} suppressWhen={suppressWhen}>
+      <choice>
+        <ImpliedURL {...props} id={undefined} />
+        <SpecificURL {...props} id={undefined} />
+      </choice>
+    </label>
+  )
 }
+
+export default {defaultProps, describe}
