@@ -3,7 +3,7 @@
 
 import _ from 'lodash'
 import { createElement, compile } from 'elliptical'
-import URL from '../src'
+import { URL } from '../src'
 import { expect } from 'chai'
 
 function text(input) {

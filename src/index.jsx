@@ -24,4 +24,4 @@ function describe ({props}) {
   )
 }
 
-export default {defaultProps, describe}
+export const URL = {defaultProps, describe}
