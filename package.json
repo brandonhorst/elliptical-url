@@ -6,7 +6,7 @@
     "url": "https://github.com/laconalabs/elliptical-url/issues"
   },
   "dependencies": {
-    "elliptical": "^1.0.0-rc4"
+    "elliptical": "^1.0.0-rc5"
   },
   "description": "Elliptical Phrase for handling URLs",
   "devDependencies": {
