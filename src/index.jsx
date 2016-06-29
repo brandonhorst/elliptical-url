@@ -15,12 +15,12 @@ function suppressWhen (input) {
 
 function describe ({props}) {
   return (
-    <label text={props.argument} suppressWhen={suppressWhen}>
+    <placeholder text={props.argument} suppressWhen={suppressWhen}>
       <choice>
         <ImpliedURL {...props} id={undefined} />
         <SpecificURL {...props} id={undefined} />
       </choice>
-    </label>
+    </placeholder>
   )
 }
 
