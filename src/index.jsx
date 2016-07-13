@@ -5,7 +5,7 @@ import SpecificURL from './specific-url'
 
 const defaultProps = {
   splitOn: /\s|,/,
-  argument: 'URL',
+  label: 'URL',
   limit: 1
 }
 
@@ -15,7 +15,10 @@ function suppressWhen (input) {
 
 function describe ({props}) {
   return (
-    <placeholder text={props.argument} suppressWhen={suppressWhen}>
+    <placeholder
+      label={props.label}
+      arguments={props.phraseArguments || (props.phraseArguments ? [props.phraseArgument] : [props.label])}
+      suppressWhen={suppressWhen}>
       <choice>
         <ImpliedURL {...props} id={undefined} />
         <SpecificURL {...props} id={undefined} />
