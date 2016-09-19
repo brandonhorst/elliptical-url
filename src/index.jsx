@@ -27,4 +27,4 @@ function describe ({props}) {
   )
 }
 
-export const URL = {defaultProps, describe}
+export const URL = {defaultProps, describe, id: 'elliptical-url:URL'}
